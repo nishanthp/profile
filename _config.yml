@@ -13,9 +13,6 @@ title                    : "Nishanth Prakash / Homepage"
 title_separator          : "-"
 name                     : &name "Nishanth Prakash"
 description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -38,11 +35,11 @@ author:
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
 
   # Repositories and software development
-  github           : "academicpages" 
+  github           : https://github.com/nishanthp
 
   # Social media
-  linkedin         : # Username
-  medium           : # URL
+  linkedin         : www.linkedin.com/in/nishanth-prakash
+  medium           : https://medium.com/@nishanthprakash
 
 
 # Publication Category - The following the list of publication categories and their headings
@@ -218,15 +215,6 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _teaching
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
   # _publications
   - scope:
       path: ""
