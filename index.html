@@ -7,68 +7,75 @@
 <style>
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    margin:0;
-}
-
-.container{
-    display:flex;
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+display:flex;
 }
 
 /* Sidebar */
 
 .sidebar{
-    width:260px;
-    background:#f5f5f5;
-    height:100vh;
-    padding:25px;
-    text-align:center;
+width:260px;
+background:#f5f5f5;
+padding:30px;
+height:100vh;
+text-align:center;
+border-right:1px solid #ddd;
 }
 
 .sidebar img{
-    width:160px;
-    border-radius:50%;
-    margin-bottom:20px;
+width:160px;
+height:160px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:20px;
 }
 
 .sidebar a{
-    display:block;
-    margin:10px 0;
-    text-decoration:none;
-    color:#333;
+display:block;
+margin:10px 0;
+color:#333;
+text-decoration:none;
 }
 
-/* Content */
+/* Main area */
 
-.content{
-    padding:40px;
-    max-width:900px;
+.main{
+flex:1;
+padding:40px;
 }
 
-.tabs button{
-    padding:10px 15px;
-    border:none;
-    background:#e0e0e0;
-    margin-right:5px;
-    cursor:pointer;
+/* Navigation tabs */
+
+.navbar{
+margin-bottom:30px;
+border-bottom:1px solid #ddd;
 }
 
-.tabs button.active{
-    background:#333;
-    color:white;
+.navbar button{
+background:none;
+border:none;
+font-size:16px;
+margin-right:20px;
+padding:10px;
+cursor:pointer;
 }
 
-.tabcontent{
-    display:none;
-    margin-top:20px;
+.navbar button.active{
+font-weight:bold;
+border-bottom:2px solid black;
 }
 
-.tabcontent.active{
-    display:block;
+.section{
+display:none;
+}
+
+.section.active{
+display:block;
 }
 
 li{
-    margin-bottom:8px;
+margin-bottom:8px;
 }
 
 </style>
@@ -76,34 +83,33 @@ li{
 
 <body>
 
-<div class="container">
-
 <div class="sidebar">
 
 <img src="profile.png">
 
 <h3>Nishanth Prakash</h3>
 
-<p>AI / ML Infrastructure<br>Oracle Cloud Infrastructure</p>
+<p>AI/ML Infrastructure<br>Oracle Cloud Infrastructure</p>
 
-<a href="mailto:nishanth.prakash@oracle.com">Email</a>
-<a href="https://github.com/nishanthp">GitHub</a>
-<a href="https://www.linkedin.com/in/nishanth-prakash">LinkedIn</a>
+<a href="mailto:nishanth.prakash@gmail.com">Email</a>
+<a href="https://github.com/nishanthp" target="_blank">GitHub</a>
+<a href="https://www.linkedin.com/in/nishanth-prakash/" target="_blank">LinkedIn</a>
 
 </div>
 
-<div class="content">
+
+<div class="main">
 
 <h1>Nishanth Prakash</h1>
 
-<div class="tabs">
-<button class="tablink active" onclick="openTab(event,'blogs')">Blogs</button>
-<button class="tablink" onclick="openTab(event,'publications')">Publications</button>
-<button class="tablink" onclick="openTab(event,'opensource')">Open Source Contributions</button>
-<button class="tablink" onclick="openTab(event,'talks')">Talks</button>
+<div class="navbar">
+<button class="tab active" onclick="show('blogs',this)">Blogs</button>
+<button class="tab" onclick="show('publications',this)">Publications</button>
+<button class="tab" onclick="show('opensource',this)">Open Source Contributions</button>
+<button class="tab" onclick="show('talks',this)">Talks</button>
 </div>
 
-<div id="blogs" class="tabcontent active">
+<div id="blogs" class="section active">
 <ul>
 <li><a href="https://blogs.oracle.com/ai-and-datascience/post/burstable-compute-instances-ml-model-deployments">Optimizing Machine Learning Deployments on OCI</a></li>
 <li><a href="https://blogs.oracle.com/ai-and-datascience/post/introducing-private-endpoints-oci-model-deployment">Private Networking on Model Deployment</a></li>
@@ -111,7 +117,7 @@ li{
 </ul>
 </div>
 
-<div id="publications" class="tabcontent">
+<div id="publications" class="section">
 <ul>
 <li>Adaptive Neural Guardrails for Large Language Models – IEEE</li>
 <li>Leveraging Synthetic Multilingual Speech for ASR Adaptation – IEEE</li>
@@ -119,7 +125,7 @@ li{
 </ul>
 </div>
 
-<div id="opensource" class="tabcontent">
+<div id="opensource" class="section">
 <ul>
 <li><a href="https://github.com/redis/mcp-redis/pull/38">Redis MCP – LREM command support</a></li>
 <li><a href="https://github.com/run-llama/notebookllama/pull/43">NotebookLlama contribution</a></li>
@@ -128,33 +134,24 @@ li{
 </ul>
 </div>
 
-<div id="talks" class="tabcontent">
+<div id="talks" class="section">
 <ul>
-<li>AI Infrastructure for Production Systems – IEEE IATMSI 2025</li>
-<li>Generative AI Infrastructure at Scale – ICITAI 2026</li>
+<li>AI Infrastructure for Production Systems – IEEE IATMSI</li>
+<li>Generative AI Infrastructure at Scale – ICITAI</li>
 </ul>
-</div>
-
 </div>
 
 </div>
 
 <script>
 
-function openTab(evt, tabName) {
+function show(id,btn){
 
-let tabcontent = document.getElementsByClassName("tabcontent");
-for (let i = 0; i < tabcontent.length; i++) {
-tabcontent[i].classList.remove("active");
-}
+document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"))
+document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"))
 
-let tablinks = document.getElementsByClassName("tablink");
-for (let i = 0; i < tablinks.length; i++) {
-tablinks[i].classList.remove("active");
-}
-
-document.getElementById(tabName).classList.add("active");
-evt.currentTarget.classList.add("active");
+document.getElementById(id).classList.add("active")
+btn.classList.add("active")
 
 }
 
