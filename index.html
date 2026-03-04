@@ -38,20 +38,33 @@ body{
     color:#333;
 }
 
-/* Main Content */
+/* Content */
 
 .content{
     padding:40px;
     max-width:900px;
 }
 
-h1{
-    margin-top:0;
+.tabs button{
+    padding:10px 15px;
+    border:none;
+    background:#e0e0e0;
+    margin-right:5px;
+    cursor:pointer;
 }
 
-h2{
-    border-bottom:1px solid #ddd;
-    padding-bottom:5px;
+.tabs button.active{
+    background:#333;
+    color:white;
+}
+
+.tabcontent{
+    display:none;
+    margin-top:20px;
+}
+
+.tabcontent.active{
+    display:block;
 }
 
 li{
@@ -71,8 +84,7 @@ li{
 
 <h3>Nishanth Prakash</h3>
 
-<p>AI / ML Infrastructure<br>
-Oracle Cloud Infrastructure</p>
+<p>AI / ML Infrastructure<br>Oracle Cloud Infrastructure</p>
 
 <a href="mailto:your_email@gmail.com">Email</a>
 <a href="https://github.com/nishanthp">GitHub</a>
@@ -84,65 +96,69 @@ Oracle Cloud Infrastructure</p>
 
 <h1>Nishanth Prakash</h1>
 
-<h2>Blogs</h2>
+<div class="tabs">
+<button class="tablink active" onclick="openTab(event,'blogs')">Blogs</button>
+<button class="tablink" onclick="openTab(event,'publications')">Publications</button>
+<button class="tablink" onclick="openTab(event,'opensource')">Open Source Contributions</button>
+<button class="tablink" onclick="openTab(event,'talks')">Talks</button>
+</div>
+
+<div id="blogs" class="tabcontent active">
 <ul>
 <li><a href="https://blogs.oracle.com/ai-and-datascience/post/burstable-compute-instances-ml-model-deployments">Optimizing Machine Learning Deployments on OCI</a></li>
-
 <li><a href="https://blogs.oracle.com/ai-and-datascience/post/introducing-private-endpoints-oci-model-deployment">Private Networking on Model Deployment</a></li>
-
 <li><a href="https://huggingface.co/blog/nprak26/multilingual-asr">Breaking Language Barriers with Multilingual ASR</a></li>
 </ul>
+</div>
 
-
-<h2>Publications</h2>
-
+<div id="publications" class="tabcontent">
 <ul>
 <li>Adaptive Neural Guardrails for Large Language Models – IEEE</li>
-
 <li>Leveraging Synthetic Multilingual Speech for ASR Adaptation – IEEE</li>
-
-<li><a href="https://ieeexplore.ieee.org/abstract/document/11336878">
-AI-Driven Threat Detection in Cloud Environment
-</a></li>
+<li><a href="https://ieeexplore.ieee.org/abstract/document/11336878">AI-Driven Threat Detection in Cloud Environment</a></li>
 </ul>
+</div>
 
-
-<h2>Open Source Contributions</h2>
-
+<div id="opensource" class="tabcontent">
 <ul>
-
-<li><a href="https://github.com/redis/mcp-redis/pull/38">
-Redis MCP – LREM command support
-</a></li>
-
-<li><a href="https://github.com/run-llama/notebookllama/pull/43">
-NotebookLlama contribution
-</a></li>
-
-<li><a href="https://github.com/run-llama/llama_index/pull/20545">
-LlamaIndex contribution
-</a></li>
-
-<li><a href="https://github.com/nishanthp/synthetic-multilingual-asr-adaptation">
-Synthetic Multilingual ASR Adaptation
-</a></li>
-
+<li><a href="https://github.com/redis/mcp-redis/pull/38">Redis MCP – LREM command support</a></li>
+<li><a href="https://github.com/run-llama/notebookllama/pull/43">NotebookLlama contribution</a></li>
+<li><a href="https://github.com/run-llama/llama_index/pull/20545">LlamaIndex contribution</a></li>
+<li><a href="https://github.com/nishanthp/synthetic-multilingual-asr-adaptation">Synthetic Multilingual ASR Adaptation</a></li>
 </ul>
+</div>
 
-
-<h2>Talks</h2>
-
+<div id="talks" class="tabcontent">
 <ul>
-
 <li>AI Infrastructure for Production Systems – IEEE IATMSI 2025</li>
-
 <li>Generative AI Infrastructure at Scale – ICITAI 2026</li>
-
 </ul>
-
 </div>
 
 </div>
+
+</div>
+
+<script>
+
+function openTab(evt, tabName) {
+
+let tabcontent = document.getElementsByClassName("tabcontent");
+for (let i = 0; i < tabcontent.length; i++) {
+tabcontent[i].classList.remove("active");
+}
+
+let tablinks = document.getElementsByClassName("tablink");
+for (let i = 0; i < tablinks.length; i++) {
+tablinks[i].classList.remove("active");
+}
+
+document.getElementById(tabName).classList.add("active");
+evt.currentTarget.classList.add("active");
+
+}
+
+</script>
 
 </body>
 </html>
