@@ -9,23 +9,53 @@
 body{
 font-family: Arial, Helvetica, sans-serif;
 margin:0;
+color:#333;
+}
+
+/* Top navbar */
+
+.navbar{
 display:flex;
+justify-content:center;
+gap:40px;
+padding:15px;
+border-bottom:1px solid #ddd;
+font-size:18px;
+}
+
+.navbar button{
+background:none;
+border:none;
+cursor:pointer;
+font-size:18px;
+}
+
+.navbar button.active{
+font-weight:bold;
+border-bottom:2px solid black;
+}
+
+/* Layout */
+
+.container{
+display:flex;
+max-width:1100px;
+margin:auto;
+margin-top:40px;
 }
 
 /* Sidebar */
 
 .sidebar{
-width:260px;
-background:#f5f5f5;
-padding:30px;
-height:100vh;
+width:280px;
 text-align:center;
-border-right:1px solid #ddd;
+padding-right:40px;
+border-right:1px solid #eee;
 }
 
 .sidebar img{
-width:160px;
-height:160px;
+width:180px;
+height:180px;
 border-radius:50%;
 object-fit:cover;
 margin-bottom:20px;
@@ -34,36 +64,15 @@ margin-bottom:20px;
 .sidebar a{
 display:block;
 margin:10px 0;
-color:#333;
 text-decoration:none;
+color:#333;
 }
 
-/* Main area */
+/* Content */
 
-.main{
+.content{
 flex:1;
-padding:40px;
-}
-
-/* Navigation tabs */
-
-.navbar{
-margin-bottom:30px;
-border-bottom:1px solid #ddd;
-}
-
-.navbar button{
-background:none;
-border:none;
-font-size:16px;
-margin-right:20px;
-padding:10px;
-cursor:pointer;
-}
-
-.navbar button.active{
-font-weight:bold;
-border-bottom:2px solid black;
+padding-left:40px;
 }
 
 .section{
@@ -79,28 +88,10 @@ margin-bottom:8px;
 }
 
 </style>
+
 </head>
 
 <body>
-
-<div class="sidebar">
-
-<img src="profile.png">
-
-<h3>Nishanth Prakash</h3>
-
-<p>AI/ML Infrastructure<br>Oracle Cloud Infrastructure</p>
-
-<a href="mailto:nishanth.prakash@gmail.com">Email</a>
-<a href="https://github.com/nishanthp" target="_blank">GitHub</a>
-<a href="https://www.linkedin.com/in/nishanth-prakash/" target="_blank">LinkedIn</a>
-
-</div>
-
-
-<div class="main">
-
-<h1>Nishanth Prakash</h1>
 
 <div class="navbar">
 <button class="tab active" onclick="show('blogs',this)">Blogs</button>
@@ -109,36 +100,131 @@ margin-bottom:8px;
 <button class="tab" onclick="show('talks',this)">Talks</button>
 </div>
 
+<div class="container">
+
+<div class="sidebar">
+
+<img src="profile.png">
+
+<h2>Nishanth Prakash</h2>
+
+<p>
+AI/ML Infrastructure<br>
+Oracle Cloud Infrastructure
+</p>
+
+<a href="mailto:your_email@gmail.com">Email</a>
+<a href="https://github.com/nishanthp" target="_blank">GitHub</a>
+<a href="https://www.linkedin.com/in/nishanth-prakash/" target="_blank">LinkedIn</a>
+
+</div>
+
+<div class="content">
+
 <div id="blogs" class="section active">
+
+<h2>Blogs</h2>
+
 <ul>
-<li><a href="https://blogs.oracle.com/ai-and-datascience/post/burstable-compute-instances-ml-model-deployments">Optimizing Machine Learning Deployments on OCI</a></li>
-<li><a href="https://blogs.oracle.com/ai-and-datascience/post/introducing-private-endpoints-oci-model-deployment">Private Networking on Model Deployment</a></li>
-<li><a href="https://huggingface.co/blog/nprak26/multilingual-asr">Breaking Language Barriers with Multilingual ASR</a></li>
+
+<li>
+<a href="https://blogs.oracle.com/ai-and-datascience/post/burstable-compute-instances-ml-model-deployments">
+Optimizing Machine Learning Deployments on OCI
+</a>
+</li>
+
+<li>
+<a href="https://blogs.oracle.com/ai-and-datascience/post/introducing-private-endpoints-oci-model-deployment">
+Private Networking on Model Deployment
+</a>
+</li>
+
+<li>
+<a href="https://huggingface.co/blog/nprak26/multilingual-asr">
+Breaking Language Barriers with Multilingual ASR
+</a>
+</li>
+
 </ul>
+
 </div>
 
 <div id="publications" class="section">
+
+<h2>Publications</h2>
+
 <ul>
-<li>Adaptive Neural Guardrails for Large Language Models – IEEE</li>
-<li>Leveraging Synthetic Multilingual Speech for ASR Adaptation – IEEE</li>
-<li><a href="https://ieeexplore.ieee.org/abstract/document/11336878">AI-Driven Threat Detection in Cloud Environment</a></li>
+
+<li>
+Adaptive Neural Guardrails for Large Language Models – IEEE
+</li>
+
+<li>
+Leveraging Synthetic Multilingual Speech for ASR Adaptation – IEEE
+</li>
+
+<li>
+<a href="https://ieeexplore.ieee.org/abstract/document/11336878">
+AI-Driven Threat Detection in Cloud Environment
+</a>
+</li>
+
 </ul>
+
 </div>
 
 <div id="opensource" class="section">
+
+<h2>Open Source Contributions</h2>
+
 <ul>
-<li><a href="https://github.com/redis/mcp-redis/pull/38">Redis MCP – LREM command support</a></li>
-<li><a href="https://github.com/run-llama/notebookllama/pull/43">NotebookLlama contribution</a></li>
-<li><a href="https://github.com/run-llama/llama_index/pull/20545">LlamaIndex contribution</a></li>
-<li><a href="https://github.com/nishanthp/synthetic-multilingual-asr-adaptation">Synthetic Multilingual ASR Adaptation</a></li>
+
+<li>
+<a href="https://github.com/redis/mcp-redis/pull/38">
+Redis MCP – LREM command support
+</a>
+</li>
+
+<li>
+<a href="https://github.com/run-llama/notebookllama/pull/43">
+NotebookLlama contribution
+</a>
+</li>
+
+<li>
+<a href="https://github.com/run-llama/llama_index/pull/20545">
+LlamaIndex contribution
+</a>
+</li>
+
+<li>
+<a href="https://github.com/nishanthp/synthetic-multilingual-asr-adaptation">
+Synthetic Multilingual ASR Adaptation
+</a>
+</li>
+
 </ul>
+
 </div>
 
 <div id="talks" class="section">
+
+<h2>Talks</h2>
+
 <ul>
-<li>AI Infrastructure for Production Systems – IEEE IATMSI</li>
-<li>Generative AI Infrastructure at Scale – ICITAI</li>
+
+<li>
+AI Infrastructure for Production Systems – IEEE IATMSI
+</li>
+
+<li>
+Generative AI Infrastructure at Scale – ICITAI
+</li>
+
 </ul>
+
+</div>
+
 </div>
 
 </div>
