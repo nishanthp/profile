@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <title>Nishanth Prakash</title>
@@ -12,7 +13,7 @@ margin:0;
 color:#333;
 }
 
-/* Top navbar */
+/* Top navigation */
 
 .navbar{
 display:flex;
@@ -39,7 +40,7 @@ border-bottom:2px solid black;
 
 .container{
 display:flex;
-max-width:900px;
+max-width:1000px;
 margin-left:80px;
 margin-top:40px;
 }
@@ -49,13 +50,13 @@ margin-top:40px;
 .sidebar{
 width:220px;
 text-align:center;
-padding-right:40px;
+padding-right:30px;
 border-right:1px solid #eee;
 }
 
 .sidebar img{
-width:180px;
-height:180px;
+width:140px;
+height:140px;
 border-radius:50%;
 object-fit:cover;
 margin-bottom:20px;
@@ -94,11 +95,15 @@ margin-bottom:8px;
 <body>
 
 <div class="navbar">
-<button class="tab active" onclick="show('blogs',this)">Blogs</button>
+
+<button class="tab active" onclick="show('home',this)">Home</button>
+<button class="tab" onclick="show('blogs',this)">Blogs</button>
 <button class="tab" onclick="show('publications',this)">Publications</button>
 <button class="tab" onclick="show('opensource',this)">Open Source Contributions</button>
 <button class="tab" onclick="show('talks',this)">Talks</button>
+
 </div>
+
 
 <div class="container">
 
@@ -119,9 +124,40 @@ Oracle Cloud Infrastructure
 
 </div>
 
+
 <div class="content">
 
-<div id="blogs" class="section active">
+
+<!-- HOME -->
+
+<div id="home" class="section active">
+
+<h2>About</h2>
+
+<p>
+I am a software engineer working on AI/ML infrastructure at Oracle Cloud Infrastructure.
+My work focuses on building scalable systems for deploying and serving machine learning
+and large language models in production environments.
+</p>
+
+<p>
+My interests include:
+</p>
+
+<ul>
+<li>AI infrastructure and model deployment platforms</li>
+<li>Streaming inference systems</li>
+<li>Secure and private machine learning systems</li>
+<li>Large-scale distributed ML systems</li>
+</ul>
+
+</div>
+
+
+
+<!-- BLOGS -->
+
+<div id="blogs" class="section">
 
 <h2>Blogs</h2>
 
@@ -149,6 +185,10 @@ Breaking Language Barriers with Multilingual ASR
 
 </div>
 
+
+
+<!-- PUBLICATIONS -->
+
 <div id="publications" class="section">
 
 <h2>Publications</h2>
@@ -172,6 +212,10 @@ AI-Driven Threat Detection in Cloud Environment
 </ul>
 
 </div>
+
+
+
+<!-- OPEN SOURCE -->
 
 <div id="opensource" class="section">
 
@@ -207,6 +251,10 @@ Synthetic Multilingual ASR Adaptation
 
 </div>
 
+
+
+<!-- TALKS -->
+
 <div id="talks" class="section">
 
 <h2>Talks</h2>
@@ -225,9 +273,11 @@ Generative AI Infrastructure at Scale – ICITAI
 
 </div>
 
+
 </div>
 
 </div>
+
 
 <script>
 
@@ -244,4 +294,5 @@ btn.classList.add("active")
 </script>
 
 </body>
+
 </html>
