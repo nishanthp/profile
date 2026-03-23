@@ -319,52 +319,7 @@ U.S. patent application filed with the United States Patent and Trademark Office
 
 <h2>Open Source Contributions</h2>
 
-<ul>
-
-<li>
-<b><a href="https://github.com/redis/mcp-redis/pull/38">
-Redis MCP – LREM Command Support
-</a></b><br>
-Added support for the <b>LREM Redis list command</b> to the Redis MCP server implementation. 
-This contribution improves command coverage and compatibility with Redis clients by enabling 
-list element removal operations through the MCP command interface.
-</li>
-
-<br>
-
-<li>
-<b><a href="https://github.com/run-llama/notebookllama/pull/43">
-NotebookLlama Contribution
-</a></b><br>
-Improved functionality in the NotebookLlama environment used for experimenting with 
-LLM workflows in notebook environments. The update enhances integration with LlamaIndex 
-components and improves developer usability when building LLM applications.
-</li>
-
-<br>
-
-<li>
-<b><a href="https://github.com/redis/mcp-redis/pull/95">
-Redis MCP – Hybrid Search Integration
-</a></b><br>
-Implemented enhancements to the Redis MCP server to support <b>hybrid search capabilities</b>, 
-combining vector similarity search with traditional filtering mechanisms. This update improves 
-the flexibility of Redis-backed AI applications by enabling more advanced retrieval patterns 
-commonly used in retrieval-augmented generation (RAG) and semantic search systems.
-</li>
-
-<br>
-
-<li>
-<b><a href="https://github.com/run-llama/llama_index/pull/20545">
-LlamaIndex Contribution
-</a></b><br>
-Contributed improvements to the LlamaIndex framework, an open-source platform used for 
-building retrieval-augmented generation (RAG) applications. The change enhances integration 
-capabilities within the LLM application ecosystem.
-</li>
-
-<br>
+<ol>
 
 <li>
 <b><a href="https://github.com/nishanthp/synthetic-multilingual-asr-adaptation">
@@ -376,7 +331,50 @@ contains pipelines for synthetic speech generation, multilingual dataset creatio
 and ASR model fine-tuning.
 </li>
 
-<br>
+<li>
+<b>MCP Redis</b>
+<ul>
+<li>
+<b><a href="https://github.com/redis/mcp-redis/pull/38">
+Redis MCP – LREM Command Support
+</a></b><br>
+Added support for the <b>LREM Redis list command</b> to the Redis MCP server implementation. 
+This contribution improves command coverage and compatibility with Redis clients by enabling 
+list element removal operations through the MCP command interface.
+</li>
+<li>
+<b><a href="https://github.com/redis/mcp-redis/pull/95">
+Redis MCP – Hybrid Search Integration
+</a></b><br>
+Implemented enhancements to the Redis MCP server to support <b>hybrid search capabilities</b>, 
+combining vector similarity search with traditional filtering mechanisms. This update improves 
+the flexibility of Redis-backed AI applications by enabling more advanced retrieval patterns 
+commonly used in retrieval-augmented generation (RAG) and semantic search systems.
+</li>
+</ul>
+</li>
+
+<li>
+<b>Llama Index</b>
+<ul>
+<li>
+<b><a href="https://github.com/run-llama/notebookllama/pull/43">
+NotebookLlama Contribution
+</a></b><br>
+Improved functionality in the NotebookLlama environment used for experimenting with 
+LLM workflows in notebook environments. The update enhances integration with LlamaIndex 
+components and improves developer usability when building LLM applications.
+</li>
+<li>
+<b><a href="https://github.com/run-llama/llama_index/pull/20545">
+LlamaIndex Contribution
+</a></b><br>
+Contributed improvements to the LlamaIndex framework, an open-source platform used for 
+building retrieval-augmented generation (RAG) applications. The change enhances integration 
+capabilities within the LLM application ecosystem.
+</li>
+</ul>
+</li>
 
 <li>
 <b><a href="https://github.com/lightseekorg/smg/pull/833">
@@ -385,7 +383,7 @@ LightSeek SMG Contribution
 Enhanced <b>request validation and tool selection reliability</b> by requiring MCP toolset entries to have corresponding server configurations, and by enforcing that explicit tool choices include a declared, non-empty tools list. This update also unifies tool-name matching with stricter rules that respect per-tool enablement and MCP overrides, ensuring invalid selections are caught early and fail validation.
 </li>
 
-</ul>
+</ol>
 
 </div>
 
