@@ -326,6 +326,14 @@ Memory-Efficient Adapter Quantization for On-Device Language Models - 6th IEEE I
 This work studies adapter-only quantization for personalized out-of-vocabulary expansion in on-device next-word prediction. The approach quantizes only the personalized adapter while keeping the shared language model at full precision, and combines this with a deeper 3-layer GELU adapter design. Experiments on four datasets show that FP16 adapter quantization improves both efficiency and quality, delivering about 1.5x memory reduction with a 1.6% EMR3 gain. The findings suggest reduced precision can improve practical personalization when paired with stronger adapter architecture, without changing the federated training pipeline.
 </li>
 
+<li>
+<b>
+Beyond Compression - Using Quantization to Enable Deeper Personalized Adapters in Speech Systems
+</b>
+<br>
+We propose adapter-only quantization for voice assistant pipelines, quantizing only the personalized OOV adapter while preserving full precision for the shared base model. Our key insight is memory reinvestment using compression savings to deploy deeper adapter architectures that enhance representational capacity within equivalent memory budgets.
+</li>
+
 </ul>
 
 <h3>Patents</h3>
